@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
+title: DV2008
+description: Interface Design
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: school work
 ---
 
 Every project has a beautiful feature showcase page.
