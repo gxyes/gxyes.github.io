@@ -1,12 +1,55 @@
 ---
 layout: page
 title: DV2008
-description: Interface Design
+description: Interface Design Portfolio
 img: assets/img/google_scholar_logo.jpg
 importance: 1
 category: school work
 ---
 
+<style>
+    .btn {
+        background: #eb94d0;
+        /* 创建渐变 */
+        background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+        background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+        /* 给按钮添加圆角 */
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        text-shadow: 3px 2px 1px #9daef5;
+        -webkit-box-shadow: 6px 5px 12px #666666;
+        -moz-box-shadow: 6px 5px 12px #666666;
+        box-shadow: 6px 5px 12px #666666;
+        font-family: Arial;
+        color: #fafafa;
+        font-size: 16px;
+        padding: 10px;
+        text-decoration: none;
+        }
+        /* 悬停样式 */
+        .btn:hover {
+        background: #2079b0;
+        background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+        background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+        text-decoration: none;
+    }
+</style>
+<button class="btn" onclick="window.location.href='https://www.figma.com/proto/u3PjAySXX93r2DrEp1k3Hk/Demo?page-id=0%3A1&node-id=1-592&viewport=279%2C236%2C0.09&scaling=min-zoom&starting-point-node-id=1%3A592';">
+      Try Our Demo
+</button>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/header.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 <p>
     <strong style="font-size:1.5rem">From Frustration to Satisfaction:</strong><br>
     Empowering STEM undergraduates to accurately and efficiently access scholarly literature.
@@ -19,7 +62,7 @@ category: school work
     COLLABORATORS: Xinying (Me), Rachel, Fuguo, Sebastian, Limin
 
 <!-- Overview -->
-<p class="caption"><strong style="font-size:1rem; color: var(--global-theme-color); font-weight:bold">INTRODUCTION</strong></p>
+<p class="caption"><strong style="font-size:1rem; color: var(--global-theme-color); font-weight:bold">BACKGROUND</strong></p>
     This project focuses on enhancing the UI/UX design of the Google Scholar iOS mobile web version.
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -122,7 +165,7 @@ category: school work
 </div>
 
 <p class="caption"><strong style="font-size:1rem; font-weight:bold">PROJECT GOAL & HOW MIGHT WE?</strong></p>
-    A user-friendly interface that allows users to search for and access scholarly literature accurately and effectively
+    An intuitive interface for precise, efficient access to scholarly literature.
 <div style="font-size:0.8rem; font-family:consolas">
     🌟<strong style="font-family:consolas; font-weight:bold">Goal:</strong> A user-friendly interface that allows users to search for and access scholarly literature accurately and effectively.<br>
     1️⃣<strong style="font-family:consolas; font-weight:bold">Reliable: </strong>HMW ensure sources are credible and reliable?<br>
