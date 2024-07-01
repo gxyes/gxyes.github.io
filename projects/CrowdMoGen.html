@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="CrowdMoGen: Zero-Shot Text-Driven Collective Motion Generation">
+  <meta name="keywords" content="Our keywords for search">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrowdMoGen</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index_remodiffuse.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+<div class="wrapper" style="width: 80%;">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="#">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#">
+            Title 1
+          </a>
+          <a class="navbar-item" href="#">
+            Title 2
+          </a>
+          <a class="navbar-item" href="#">
+            Title 3
+          </a>
+          <a class="navbar-item" href="#">
+            Title 4
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>  
+</nav> -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-widescreen" style="max-width: 3000px;">
+      <div class="columns is-centered">
+        <div class="column has-text-centered" style="padding-bottom: 0.2rem;">
+          <h1 class="title is-2 publication-title" style="margin-bottom: 0.5rem;">CrowdMoGen: Zero-Shot Text-Driven Collective Motion Generation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://gxyes.github.io/" target="_blank">Xinying Guo</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://mingyuan-zhang.github.io/" target="_blank">Mingyuan Zhang</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://www.infinitescript.com/" target="_blank">Haozhe Xie</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/rheallyc/" target="_blank">Chenyang Gu</a><sup>1</sup>,&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a><sup>1✉</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>S-Lab, Nanyang Technological University</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>✉</sup>corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+                  </a>
+              </span>
+              <!-- Colab Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://colab.research.google.com/drive/1Dp6VsZp2ozKuu9ccMmsDjyij_vXfCYb3?usp=sharing"
+                   class="external-link button is-normal is-rounded is-dark">
+                   <svg width="30" height="30">       
+                    <image xlink:href="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" width="30" height="30"/>    
+                   </svg>
+                  <span>&nbsp;&nbsp;Colab</span>
+                  </a>
+              </span>
+              -->
+              
+              <!-- Hugging Face Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/mingyuan/MotionDiffuse"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗&nbsp;&nbsp;Hugging Face</span>
+                  </a>
+              </span>
+              -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full">
+      <!-- <h2 class="title is-3">Video</h2> -->
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/NeFezKIl7GE?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <!--/ Paper video. -->
+</section>
+
+<!-- Abtract and Paper Video -->
+<section class="section">
+  <div class="container is-max-widescreen" style="max-width: 3000px;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <img style="width: 70%;" src="../static/images/CrowdMoGen/teaser.png">
+        <div class="content has-text-justified">
+          <p><i>Collective Motion Generation</i> is essential in entertainment industries such as animation and games as well as in strategic fields like urban simulation and planning. 
+            This new task requires an intricate integration of control and generation to realistically synthesize crowd dynamics under specific spatial and semantic constraints, whose challenges are yet to be fully explored.
+            On the one hand, existing human motion generation models typically focus on individual behaviors, neglecting the complexities of collective behaviors. 
+            On the other hand, recent methods for multi-person motion generation depend heavily on pre-defined scenarios and are limited to a fixed, small number of inter-person interactions, thus hampering their practicality. 
+            To overcome these challenges, we introduce <strong>CrowdMoGen</strong>, a zero-shot text-driven framework that harnesses the power of Large Language Model (LLM) to incorporate the collective intelligence into the motion generation framework as guidance, thereby enabling generalizable planning and generation of crowd motions without paired training data. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<!-- Pipeline -->
+<section class="section">
+    <div class="container is-max-widescreen" style="max-width: 3000px;">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Pipeline</h2>
+                <img style="width: 80%;" src="../static/images/CrowdMoGen/methodfig.png">
+                <div class="content has-text-centered">
+                  <p><i>Figure 1. Overview of the proposed CrowdMoGen.</i></p>
+                </div>
+                <div class="content has-text-justified formula">
+                  <p style="font-size: smaller;">
+                    <strong>CrowdMoGen</strong> is a novel two-stage, zero-shot framework for <i>Crowd Motion Generation</i>, which separates motion decision-making from motion generation into two distinct tasks.
+                    <br>
+                    <strong>1) Crowd Scene Planner</strong> uses a Large Language Model (LLM) to interpret and decide on crowd movements based on user scenarios, giving our method zero-shot capabilities. 
+                    It provides detailed semantic attributes (like action categories) and spatial attributes (like trajectories and interactions) for each individual, managing both overall crowd dynamics and individual interactions.
+                    <br>
+                    <strong>2) Collective Motion Generator</strong> enhances the realism of generated motions and ensures strict adherence to control signals through joint-wise <strong>InputMixing</strong>, customized <strong>ControlAttention</strong> mechanisms, and carefully designed training objectives.
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experiments -->
+<!-- <section class="section">
+    <div class="container is-max-widescreen" style="max-width: 3000px;">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full">
+                <h2 class="title is-3">Quantitative Results</h2>
+                <img style="width: 80%;" src="../static/images/ReMoDiffuse/results.png">
+            </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+              <h2 class="title is-3">Qualitative Results</h4>
+          </div>
+        </div>
+        <div class="hero-body" style="padding: 0rem;">
+          <div class="container" style="max-width: 1600px;">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-00">
+                <video poster="" id="00" autoplay controls muted loop playsinline height="100%">
+                  <source src="../static/images/ReMoDiffuse/gallery/gen_00.mkv"
+                          type="video/mp4">
+                </video>
+                <div class="has-text-centered" style="font-size: .7rem;"><strong>A person does a cartwheel.</strong></div>
+              </div>
+              <div class="item item-01">
+                <video poster="" id="01" autoplay controls muted loop playsinline height="100%">
+                  <source src="../static/images/ReMoDiffuse/gallery/gen_01.mkv"
+                          type="video/mp4">
+                </video>
+                <div class="has-text-centered" style="font-size: .7rem;"><strong>A person skips in a circle.</strong></div>
+              </div>
+              <div class="item item-02">
+                <video poster="" id="02" autoplay controls muted loop playsinline height="100%">
+                  <source src="../static/images/ReMoDiffuse/gallery/gen_02.mkv"
+                          type="video/mp4">
+                </video>
+                <div class="has-text-centered" style="font-size: .7rem;"><strong>A person turning around and happy about the acceptance of ICCV.</strong></div>
+              </div>
+              <div class="item item-03">
+                <video poster="" id="03" autoplay controls muted loop playsinline height="100%">
+                  <source src="../static/images/ReMoDiffuse/gallery/gen_03.mkv"
+                          type="video/mp4">
+                </video>
+                <div class="has-text-centered" style="font-size: .7rem;"><strong>A person stumbles backwards without falling.</strong></div>
+              </div>
+              <div class="item item-04">
+                <video poster="" id="04" autoplay controls muted loop playsinline height="100%">
+                  <source src="../static/images/ReMoDiffuse/gallery/gen_04.mkv"
+                          type="video/mp4">
+                </video>
+                <div class="has-text-centered" style="font-size: .7rem;"><strong>A person runs in a zigzag pattern.</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- More Fantastic Works -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content" style="max-width: 3000px;">
+    <h2 class="title">Fantastic Human Generation Works 🔥</h2>
+    
+    <div style="background-color: #f5f5f5; border-radius: 15px; padding: 20px; margin-bottom: 10px;">
+      <h2 class="title is-6" style="margin: 0rem 0rem 1rem 0rem;">Motion Generation</h2>
+      <p style="margin: 0rem;">⇨ <a href="https://mingyuan-zhang.github.io/projects/LMM.html"><strong>LMM</strong></a>: Large Motion Model for Unified Multi-Modal Motion Generation</p>
+      <p style="margin: 0rem;">⇨ <a href="https://mingyuan-zhang.github.io/projects/FineMoGen.html"><strong>FineMoGen</strong></a>: Fine-Grained Spatio-Temporal Motion Generation and Editing</p>
+      <p style="margin: 0rem;">⇨ <a href="https://jiawei-ren.github.io/projects/insactor/index.html"><strong>InsActor</strong></a>: Instruction-driven Physics-based Characters</p>
+      <p style="margin: 0rem;">⇨ <a href="https://mingyuan-zhang.github.io/projects/ReMoDiffuse.html"><strong>ReMoDiffuse</strong></a>: Retrieval-Augmented Motion Diffusion Model</p>
+      <p style="margin: 0rem;">⇨ <a href="https://diffmimic.github.io/"><strong>DiffMimic</strong></a>: Efficient Motion Mimicking with Differentiable Physics</p>
+      <p style="margin: 0rem;">⇨ <a href="https://mingyuan-zhang.github.io/projects/MotionDiffuse.html"><strong>MotionDiffuse</strong></a>: Text-Driven Human Motion Generation with Diffusion Model</p>
+      <p style="margin: 0rem;">⇨ <a href="https://www.mmlab-ntu.com/project/bailando/index.html"><strong>Bailando</strong></a>: 3D Dance Generation by Actor-Critic GPT with Choreographic Memory</p>
+    </div>
+
+    <div style="background-color: #f5f5f5; border-radius: 15px; padding: 20px; margin-bottom: 10px;">
+      <h2 class="title is-6" style="margin: 0rem 0rem 1rem 0rem;">2D Human Generation</h2>
+
+      <p style="margin: 0rem;">⇨ <a href="https://yumingj.github.io/projects/Text2Performer.html"><strong>Text2Performer</strong></a>: Text-Driven Human Video Generation</p>
+      <p style="margin: 0rem;">⇨ <a href="https://yumingj.github.io/projects/Text2Human.html"><strong>Text2Human</strong></a>: Text-Driven Controllable Human Image Generation</p>
+      <p style="margin: 0rem;">⇨ <a href="https://stylegan-human.github.io/"><strong>StyleGAN-Human</strong></a>: A Data-Centric Odyssey of Human Generation</p>
+    </div>
+
+    <div style="background-color: #f5f5f5; border-radius: 15px; padding: 20px; margin-bottom: 10px;">
+      <h2 class="title is-6" style="margin: 0rem 0rem 1rem 0rem;">3D Human Generation</h2>
+      <p style="margin: 0rem;">⇨ <a href="https://hongfz16.github.io/projects/EVA3D.html"><strong>EVA3D</strong></a>: Compositional 3D Human Generation
+        from 2D Image Collections</p>
+      <p style="margin: 0rem;">⇨ <a href="https://hongfz16.github.io/projects/AvatarCLIP.html"><strong>AvatarCLIP</strong></a>: Zero-Shot Text-Driven Generation and
+        Animation of 3D Avatars</p>
+    </div>
+    
+    <div style="background-color: #f5f5f5; border-radius: 15px; padding: 20px;margin-bottom: 10px;">
+      <h2 class="title is-6" style="margin: 0rem 0rem 1rem 0rem;">Motion Dataset</h2>
+      <p style="margin: 0rem;">⇨ <a href="https://synbody.github.io/"><strong>SynBody</strong></a>: SynBody: Synthetic Dataset with Layered Human Models for 3D Human Perception and Modeling</p>
+      <p style="margin: 0rem;">⇨ <a href="https://caizhongang.github.io/projects/HuMMan/"><strong>HuMMan</strong></a>: Multi-Modal 4D Human Dataset for Versatile Sensing and Modeling</p>
+      <p style="margin: 0rem;">⇨ <a href="https://caizhongang.github.io/projects/GTA-Human/"><strong>GTA-Human</strong></a>: Playing for 3D Human Recovery</p>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-widescreen content" style="max-width: 3000px;">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhang2022motiondiffuse,
+      title   =   {ReMoDiffuse: Retrieval-Augmented Motion Diffusion Model}, 
+      author  =   {Zhang, Mingyuan and
+                   Guo, Xinying and
+                   Pan, Liang and
+                   Cai, Zhongang and
+                   Hong, Fangzhou and
+                   Li, Huirong and
+                   Yang, Lei and
+                   Liu, Ziwei},
+      year    =   {2023},
+      journal =   {arXiv preprint arXiv:2304.xxxxx},
+}</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgement">
+  <div class="container is-max-widescreen content" style="max-width: 3000px;">
+    <h2 class="title">Acknowledgement</h2>
+    <p>This work is supported by NTU NAP, MOE AcRF Tier 2 (T2EP20221-0033), and under the RIE2020 Industry Alignment Fund - Industry Collaboration Projects (IAF-ICP) Funding Initiative, as well as cash and in-kind contribution from the industry partner(s).</p>
+    <p>We referred to the project page of <a href="https://nerfies.github.io/">Nerfies</a> when creating this project page.</p>
+  </div>
+</section> -->
+
+</div>
+</body>
+</html>
