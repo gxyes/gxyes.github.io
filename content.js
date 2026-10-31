@@ -7,7 +7,7 @@ window.SITE_CONTENT = {
     "lab": "MARS Lab",
     "advisor": "Jianfei Yang",
     "email": "gxynoz@gmail.com",
-    "scholar": "https://scholar.google.com/citations?user=Dv3FKk0AAAAJ&hl=en",
+    "scholar": "https://scholar.google.com/citations?user=KWXEabIAAAAJ&hl=en",
     "github": "https://github.com/gxyes",
     "citations": null,
     "citationUpdated": null,
